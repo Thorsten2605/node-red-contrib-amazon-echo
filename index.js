@@ -89,7 +89,7 @@ module.exports = function(RED) {
 
         if ('nodeid' in msg.payload && msg.payload.nodeid !== null) {
 
-          nodeDeviceId = msg.payload.nodeid
+          nodeDeviceId = msg.payload.nodeid;
           delete msg.payload['nodeid'];
 
         } else {
@@ -97,7 +97,7 @@ module.exports = function(RED) {
           if ('nodename' in msg.payload && msg.payload.nodename !== null) {
             getDevices().forEach(function(device) {
               if (msg.payload.nodename == device.name) {
-                nodeDeviceId = device.id
+                nodeDeviceId = device.id;
                 delete msg.payload['nodename'];
               }
             });
@@ -115,7 +115,7 @@ module.exports = function(RED) {
             by: 'input',
             details: {}
           }
-        }
+        };
 
         var deviceAttributes = setDeviceAttributes(msg.payload.deviceid, msg.payload, meta, hubNode.context());
 
@@ -546,7 +546,7 @@ module.exports = function(RED) {
       current.hue = hsb[0] || 0;
       current.sat = hsb[1] || 0;
       current.bri = hsb[2] || 0;
-      current.xy = [cie[0] || 0, cie[1] || 0]
+      current.xy = [cie[0] || 0, cie[1] || 0];
       current.colormode = 'hs';
     }
 
@@ -584,4 +584,4 @@ module.exports = function(RED) {
     hubNode.send(msg);
   }
 
-}
+};
