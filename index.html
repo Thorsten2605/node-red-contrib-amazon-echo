@@ -169,6 +169,14 @@
         value: "",
         required: true
       },
+      devtype: {
+        value: "light",
+        required: true
+      },
+      devmodel: {
+        value: "ext",
+        required: true
+      },
       topic: {
         value: "",
         required: false
@@ -190,6 +198,22 @@
     </div>
     <div class="form-tips">Alexa uses this <strong>Name</strong> to indentify your device by voice. This has to be unique for each device. If you have renamed your device, please ask Alexa to discover again.</div>
     <p></p>
+    <div class="form-row">
+        <label for="node-input-devtype"><i class="fa fa-tag"></i> Device Type</label>
+        <select class="form-control" id="node-input-devtype">
+          <option value="light">Light</option>
+          <option value="sensor">Sensor</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-devmodel"><i class="fa fa-tag"></i> Model</label>
+        <select class="form-control" id="node-input-devmodel">
+          <option value="ext">Extended Color</option>
+          <option value="ct">Color Temperature</option>
+          <option value="dim">Dimmable</option>
+          <option value="onoff">On/Off</option>
+        </select>
+    </div>
     <div class="form-row">
         <label for="node-input-topic"><i class="fa fa-tasks"></i> Topic</label>
         <input type="text" id="node-input-topic">
